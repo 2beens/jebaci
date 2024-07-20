@@ -153,7 +153,7 @@
         const audio = new Audio('rada-sound.m4a');
         audio.play();
         audio.addEventListener('playing', () => {
-          addShakeEffect(this, audio.duration * 100);
+          addShakeEffect(this, audio.duration * 1000);
         });
       });
 
@@ -171,7 +171,7 @@
         const audio = new Audio('gai-sound.m4a');
         audio.play();
         audio.addEventListener('playing', () => {
-          addShakeEffect(this, audio.duration * 200);
+          addShakeEffect(this, audio.duration * 1000);
         });
       });
     </script>
