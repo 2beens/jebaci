@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Web App</title>
+    <style>
+      body {
+        background-color: white; /* Set the background color to white */
+      }
+      .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+      }
+      .image-container img {
+        cursor: pointer; /* Set cursor to pointer only on the image */
+        transition: box-shadow 0.3s ease-in-out;
+        border-radius: 50%; /* Make images circular if you want */
+        max-width: 50%;
+        border: 1px solid black;
+      }
+      .shadow-effect {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* More dramatic shadow effect */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="image-container" id="rada-container">
+        <img src="rada.png" alt="Rada" id="rada" />
+      </div>
+      <div class="image-container" id="gai-container">
+        <img src="gai.png" alt="Gai" id="gai" />
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById('rada')
+        .addEventListener('mouseover', function () {
+          this.classList.add('shadow-effect');
+        });
+
+      document
+        .getElementById('rada')
+        .addEventListener('mouseleave', function () {
+          this.classList.remove('shadow-effect');
+        });
+
+      document.getElementById('rada').addEventListener('click', function () {
+        new Audio('rada-sound.mp3').play();
+      });
+
+      document.getElementById('gai').addEventListener('mouseover', function () {
+        this.classList.add('shadow-effect');
+      });
+
+      document
+        .getElementById('gai')
+        .addEventListener('mouseleave', function () {
+          this.classList.remove('shadow-effect');
+        });
+
+      document.getElementById('gai').addEventListener('click', function () {
+        new Audio('gai-sound.mp3').play();
+      });
+    </script>
+  </body>
+</html>
