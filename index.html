@@ -130,6 +130,28 @@
     </div>
 
     <script>
+      const radaSounds = [
+        'rada-sound1.m4a',
+        'rada-sound2.m4a',
+        'rada-sound3.m4a',
+        'rada-sound4.m4a',
+        'rada-sound5.m4a',
+      ];
+
+      const gaiSounds = [
+        'gai-sound1.m4a',
+        'gai-sound2.m4a',
+        'gai-sound3.m4a',
+        'gai-sound4.m4a',
+        'gai-sound5.m4a',
+      ];
+
+      function getRandomSound(sounds) {
+        const randomIndex = Math.floor(Math.random() * sounds.length);
+        console.log(`choosing sound at index ${randomIndex}`);
+        return sounds[randomIndex];
+      }
+
       function addShakeEffect(element, duration) {
         element.classList.add('shake-effect');
         setTimeout(() => {
@@ -150,7 +172,8 @@
         });
 
       document.getElementById('rada').addEventListener('click', function () {
-        const audio = new Audio('rada-sound.m4a');
+        const randomSound = getRandomSound(radaSounds);
+        const audio = new Audio(randomSound);
         audio.play();
         audio.addEventListener('playing', () => {
           addShakeEffect(this, audio.duration * 1000);
@@ -168,7 +191,8 @@
         });
 
       document.getElementById('gai').addEventListener('click', function () {
-        const audio = new Audio('gai-sound.m4a');
+        const randomSound = getRandomSound(gaiSounds);
+        const audio = new Audio(randomSound);
         audio.play();
         audio.addEventListener('playing', () => {
           addShakeEffect(this, audio.duration * 1000);
